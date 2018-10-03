@@ -28,7 +28,12 @@ end
 trans
 end
 
-def get_english_meaning(file, emo)
-  dictionary = load_library(file)
-  dictionary["get_meaning"][emo] ? dictionary["get_meaning"][emo] : "Sorry, that emoticon was not found"
+def get_english_meaning(file, emoticon)
+library = load_library(file)
+ trans = "Sorry, that emoticon was not found"
+ library["get_meaning"].each {|japanese, english|
+   if emoticon == japanese
+     trans = english
+   end }
+   trans
 end
