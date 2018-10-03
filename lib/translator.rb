@@ -17,8 +17,8 @@ result["get_emoticon"] = get_emoticon
 result
 end
 
-def get_japanese_emoticon
-dictionary = load_library(file, emo)
+def get_japanese_emoticon(file, emo)
+dictionary = load_library(file)
 dictionary["get_emoticon"][emo] ? dictionary["get_emoticon"][emo] : "Sorry, that emoticon was not found"
 end
 
