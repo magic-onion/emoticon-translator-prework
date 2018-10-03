@@ -17,11 +17,11 @@ result["get_emoticon"] = get_emoticon
 result
 end
 
-def get_japanese_emoticon(file, emo)
+def get_japanese_emoticon(file, emoticon)
 dictionary = load_library(file)
 response = "Sorry, that emoticon was not found"
 library["get_emoticon"].each { |english, japanese
-if emo == english
+if emoticon == english
   response = japanese
 end
 }
