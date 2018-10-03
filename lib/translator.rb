@@ -3,18 +3,14 @@ require 'pry'
 require 'yaml'
 
 
-require 'yaml' # STEP ONE, REQUIRE YAML!
-# Parse a YAML string
-#YAML.load("--- foo") #=> "foo"
-
-# Emit some YAML
-#YAML.dump("foo")     # => "--- foo\n...\n"
-#{ :a => 'b'}.to_yaml  # => "---\n:a: b\n"
-
-
-def load_library(file)
- thing = YAML.load('lib/emoticons.yml')
- YAML.dump(thing)
+def load_library(file_path)
+ library = YAML.load_file(file_path)
+ result = {"gets_meaning" =>, "gets_emoticon" => {}}
+ library.each do |meaning, emoticons|
+   result["gets_meaning"][emoticons[1]] = meaning
+   result["gets_emoticon"][emoticons[0]] - emoticons[1]
+  end
+result
 end
 
 def get_japanese_emoticon
