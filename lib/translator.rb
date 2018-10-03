@@ -22,6 +22,7 @@ dictionary = load_library(file)
 dictionary["get_emoticon"][emo] ? dictionary["get_emoticon"][emo] : "Sorry, that emoticon was not found"
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file, emo)
+  dictionary = load_library(file)
+  dictionary["get meaning"][emo] ? dictionary["get_meaning"][emo] : "Sorry, that emoticon was not found"
 end
