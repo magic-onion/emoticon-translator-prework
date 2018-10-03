@@ -18,7 +18,8 @@ result
 end
 
 def get_japanese_emoticon
-  # code goes here
+dictionary = load_library(file)
+dictionary["get_emoticon"][emo] ? dictionary["get_emoticon"][emo] : "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning
