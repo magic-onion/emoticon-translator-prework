@@ -19,15 +19,13 @@ end
 
 def get_japanese_emoticon(file, emoticon)
 library = load_library(file)
- equiv = "Sorry, that emoticon was not found"
+ trans = "Sorry, that emoticon was not found"
 library["get_emoticon"].each {|english, japanese|
 if emoticon == english
-equiv = japanese 
+trans = japanese 
 end 
 }
- equiv
-
-#dictionary["get_emoticon"][emo] ? dictionary["get_emoticon"][emo] : "Sorry, that emoticon was not found"
+trans
 end
 
 def get_english_meaning(file, emo)
